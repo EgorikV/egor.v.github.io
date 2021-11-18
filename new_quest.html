@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Astromix new quest</title>
+    <link href = "fonts/stylesheet.css" rel = "stylesheet" type = "text/css" />
+    <link rel="stylesheet" href="css/quest.css">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+
+</head>
+
+<body class="quest">
+
+<header class="header">
+    <a href="" class="header__logo">
+        <svg class="astromix_logo" width="120" height="31" viewBox="0 0 120 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0)">
+                <path d="M38.8066 28.6106C39.9684 29.764 41.4872 30.3528 43.385 30.3528C44.6415 30.3528 45.6856 30.0235 46.492 29.3641C47.2984 28.7039 47.7019 27.8571 47.7019 26.8448C47.7249 24.5835 45.4242 23.6653 43.693 23.1235C42.4831 22.6758 41.5108 22.1105 41.5108 21.2629C41.5108 20.2977 42.3172 19.7794 43.5508 19.7794C44.6652 19.7794 45.8989 20.1801 46.5868 20.8395L47.5116 19.1906C46.5394 18.3194 45.2347 17.8717 43.6212 17.8717C41.1547 17.8717 39.305 19.1435 39.305 21.3099C39.305 23.6183 41.5582 24.4188 43.2894 25.0547C44.4994 25.5024 45.4716 26.067 45.4716 26.8911C45.4716 27.8571 44.6652 28.4452 43.4324 28.4452C42.0329 28.4452 40.8703 27.9747 39.8981 27.0565L38.8066 28.6106ZM50.9335 25.7134C50.9335 28.0923 52.0487 29.2457 53.2579 29.764C54.1361 30.1176 54.8003 30.1882 55.5356 30.1882C55.7014 30.1882 55.9621 30.1647 56.3419 30.1176V28.0916C55.7256 28.2111 55.0872 28.1371 54.5152 27.8798C53.851 27.574 53.2349 26.8676 53.2349 25.4546V20.133H56.1287V18.2724H53.2342V14.8812H50.9809V18.2724H49.3682V20.133H50.9335V25.7134ZM61.0059 30.0706V25.1245C61.0059 23.8292 61.3139 22.6986 61.9307 21.7326C62.5712 20.7681 63.4724 20.2734 64.6823 20.2734C64.9911 20.2734 65.228 20.2962 65.3473 20.3204V18.0599C65.0859 18.0371 64.8963 18.0136 64.7297 18.0136C62.9511 18.0136 61.5042 19.3552 60.9111 21.1688H60.8637L60.9348 20.2977V18.1548H58.7052V30.0706H61.0059ZM66.4701 24.0888C66.4701 25.8788 67.0861 27.3623 68.3435 28.5628C69.6008 29.764 71.1424 30.3528 72.9447 30.3528C74.7486 30.3528 76.2658 29.764 77.5231 28.5635C78.7804 27.3623 79.3972 25.8788 79.3972 24.0888C79.3972 22.2995 78.7804 20.8159 77.5231 19.6383C76.2658 18.4606 74.7486 17.8717 72.9218 17.8717C71.1187 17.8717 69.6008 18.4606 68.3435 19.6618C67.0869 20.8395 66.4701 22.323 66.4701 24.0888ZM68.8181 24.0888C68.8181 22.864 69.2209 21.8517 70.0043 21.0512C70.8107 20.2506 71.7829 19.85 72.9455 19.85C74.0843 19.85 75.0566 20.2506 75.8629 21.0512C76.6693 21.8517 77.0721 22.8648 77.0721 24.0888C77.0721 25.3135 76.6693 26.3258 75.8629 27.1498C75.0566 27.9747 74.0836 28.3746 72.9455 28.3746C71.7829 28.3746 70.8107 27.9747 70.0043 27.1734C69.2209 26.3493 68.8181 25.337 68.8181 24.0888ZM84.4708 30.0706V24.5129C84.4708 23.3117 84.8026 22.2516 85.4668 21.3335C86.131 20.4153 87.0092 19.9448 88.0762 19.9448C89.7126 19.9448 90.1399 21.0512 90.1399 22.9346V30.0706H92.4405V24.5129C92.4405 23.3117 92.773 22.2516 93.4128 21.3335C94.077 20.4153 94.9315 19.9448 95.9985 19.9448C97.6349 19.9448 98.1096 21.0277 98.1096 22.9346V30.0706H100.41V22.4406C100.41 19.3552 99.1773 17.8725 96.4494 17.8725C95.5247 17.8659 94.6208 18.1457 93.8637 18.673C93.081 19.2141 92.5353 19.85 92.1799 20.58H92.1325C91.7289 18.7664 90.519 17.8717 88.5508 17.8717C87.6489 17.8717 86.7952 18.1548 86.0125 18.7201C85.2298 19.2846 84.6841 19.9441 84.3761 20.6741H84.3287L84.3998 19.7794V18.1548H82.1702V30.0706H84.4708ZM105.014 15.7531C105.322 15.7531 105.618 15.6315 105.836 15.415C106.054 15.1986 106.176 14.905 106.176 14.5989C106.176 14.2928 106.054 13.9992 105.836 13.7828C105.618 13.5663 105.322 13.4447 105.014 13.4447H104.966C104.658 13.4447 104.363 13.5663 104.145 13.7827C103.927 13.9991 103.804 14.2925 103.804 14.5985C103.804 14.9045 103.927 15.198 104.145 15.4144C104.363 15.6308 104.658 15.7523 104.966 15.7523H105.014V15.7531ZM106.152 30.0706V18.1548H103.851V30.0706H106.152ZM110.922 30.0706L113.436 26.0905L113.792 25.4546H113.84L114.219 26.0905L116.733 30.0706H119.343L115.239 23.9476L119.105 18.1548H116.473L114.243 21.7812C114.124 21.9936 114.005 22.2289 113.84 22.4869H113.792L113.412 21.7812L111.183 18.154H108.55L112.416 23.9476L108.313 30.0706H110.922ZM25.6036 30.0706L30.4663 13.0532L35.2815 30.0706H37.7007L31.6999 10.2334H29.2089L23.2082 30.0706H25.6036Z"
+                      fill="#ffffff"/>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M41.1439 7.2438C41.4802 5.91055 41.335 4.96733 40.9566 4.30488C40.5783 3.64167 39.8392 3.03233 38.5146 2.63243C37.174 2.22798 35.3671 2.08608 33.1605 2.29855C28.7541 2.72349 23.1791 4.52418 17.5551 7.68468C11.9304 10.8452 7.50721 14.6643 4.8718 18.1967C3.55256 19.9647 2.74543 21.5765 2.40454 22.9256C2.06823 24.2597 2.21345 25.2021 2.5918 25.8646C2.97014 26.5278 3.70849 27.1371 5.03384 27.537C6.37447 27.9415 8.18135 28.0834 10.3872 27.8709C14.7943 27.446 20.3694 25.646 25.9933 22.4848C31.618 19.3243 36.0412 15.5051 38.6766 11.9728C39.9959 10.2047 40.803 8.59299 41.1439 7.2438ZM27.0856 24.4C38.7447 17.8476 45.8193 8.36534 42.885 3.22128C39.9523 -1.92355 28.1228 -0.783034 16.4629 5.76941C4.80377 12.3218 -2.27011 21.8041 0.662626 26.9482C3.59613 32.093 15.4257 30.9525 27.0856 24.4Z"
+                      fill="#ffffff"/>
+            </g>
+            <defs>
+                <clipPath id="clip0">
+                    <rect width="120" height="30.3529" fill="white"/>
+                </clipPath>
+            </defs>
+        </svg>
+
+    </a>
+</header>
+<section class="content">
+    <div class="progress_bar">
+        <p class="progress_bar_text">
+            Step
+        </p>
+        <div class="progress_bar_box">
+            <div class="progress_bar_step"></div>
+        </div>
+
+    </div>
+    <div class="content__form">
+        <!--Анкета-->
+        <div class="content__form-screens ">
+            <div id="goal" class="screen active">
+                <div class="screen_box">
+                  <p class="preheaeder">Select an answer</p>
+                <h2>
+                    What is your goal?
+                </h2>
+                <form action="" class="form_goal">
+                  <div class="goal_choice">
+                    <div class="goal_item" id="0" data-goal="fix">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Fix relationship problems</p>
+                        </div>
+                              <img class="choice_img" src="img/broken-heart.png" alt="">
+                    </div>
+                    <div class="goal_item" id="1" data-goal="increase">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Increase relationship satisfaction</p>
+                        </div>
+                              <img class="choice_img" src="img/goal-2.png" alt="">
+                    </div>
+                    <div class="goal_item" id="2" data-goal="discover">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Discover each other on a deeper level</p>
+                        </div>
+                              <img class="choice_img" src="img/goal-3.png" alt="">
+                    </div>
+                    <div class="goal_item" id="3" data-goal="all">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">All of the above</p>
+                        </div>
+                              <img class="choice_img" src="img/goal-4.png" alt="">
+                    </div>
+                  </div>
+                </form>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+            <div id="screen_1" class="screen">
+                <div class="screen_box">
+                  <p class="preheaeder">How does it work?</p>
+                <h2>
+                   How to Determine a Relationship Compatibility
+                </h2>
+                <p class="description">
+                      Your natal chart is a “cosmic portrait of your personality” that was formed by the Universe at the time of your birth. In order to make your compatibility report as accurate as possible, it’s important for our Astrologers to know your <b>date, place and time of birth</b>.<br><br>
+                      You will get a detailed report that helps you understand how compatible you and your partner are and predict the future of your relationship.
+                </p>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+            <div id="sex" class="screen">
+                <div class="screen_box">
+                <p class="preheaeder">Select your data</p>
+                <h2>
+                   Your gender and name
+                </h2>
+                <div class="form__name name simple_form">
+                    <input type="text" placeholder="Your name" class="text input" id="form_name" name="name">
+                    <p class="error">Cannot be blank</p>
+                </div>
+                <div class="screen_sex">
+                    <div class="sex" data-sex="woman" id="0">
+                        <img class="marker not-active" src="img/not-active.svg" alt="">
+                        <img class="marker active" src="img/active.svg" alt="">
+                        <img src="img/sex-female.png" alt="" class="img">
+                        <p>Female</p>
+                    </div>
+                    <div class="sex" data-sex="man" id="1">
+                        <img class="marker not-active" src="img/not-active.svg" alt="">
+                        <img class="marker active" src="img/active.svg" alt="">
+                        <img src="img/sex-male.png" alt="" class="img">
+                        <p>Male</p>
+                    </div>
+
+                </div>
+                <p class="undertext">
+                      Gender and name are important for personalizing your readings.
+                </p>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+            <div id="birthday" class="screen">
+                <div class="screen_box">
+                <p class="preheaeder">Select your date</p>
+                <h2>
+                   Your date of birth
+                </h2>
+                <p class="description">
+                      Your date of birth helps to determine your sun sign and compatibility with others.
+                </p>
+                <img class="main_img" src="img/date-of-birth.png" alt="">
+                <form action="" class="form_date simple_form">
+                    <select name="" class="select__day select__date">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+                    <select name="" class="select__month select__date">
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                    <select name="" class="select__year select__date">
+                        <option value="1900">1900</option>
+                        <option value="1901">1901</option>
+                        <option value="1902">1902</option>
+                        <option value="1903">1903</option>
+                        <option value="1904">1904</option>
+                        <option value="1905">1905</option>
+                        <option value="1906">1906</option>
+                        <option value="1907">1907</option>
+                        <option value="1908">1908</option>
+                        <option value="1909">1909</option>
+                        <option value="1910">1910</option>
+                        <option value="1911">1911</option>
+                        <option value="1912">1912</option>
+                        <option value="1913">1913</option>
+                        <option value="1914">1914</option>
+                        <option value="1915">1915</option>
+                        <option value="1916">1916</option>
+                        <option value="1917">1917</option>
+                        <option value="1918">1918</option>
+                        <option value="1919">1919</option>
+                        <option value="1920">1920</option>
+                        <option value="1921">1921</option>
+                        <option value="1922">1922</option>
+                        <option value="1923">1923</option>
+                        <option value="1924">1924</option>
+                        <option value="1925">1925</option>
+                        <option value="1926">1926</option>
+                        <option value="1927">1927</option>
+                        <option value="1928">1928</option>
+                        <option value="1929">1929</option>
+                        <option value="1930">1930</option>
+                        <option value="1931">1931</option>
+                        <option value="1932">1932</option>
+                        <option value="1933">1933</option>
+                        <option value="1934">1934</option>
+                        <option value="1935">1935</option>
+                        <option value="1936">1936</option>
+                        <option value="1937">1937</option>
+                        <option value="1938">1938</option>
+                        <option value="1939">1939</option>
+                        <option value="1940">1940</option>
+                        <option value="1941">1941</option>
+                        <option value="1942">1942</option>
+                        <option value="1943">1943</option>
+                        <option value="1944">1944</option>
+                        <option value="1945">1945</option>
+                        <option value="1946">1946</option>
+                        <option value="1947">1947</option>
+                        <option value="1948">1948</option>
+                        <option value="1949">1949</option>
+                        <option value="1950">1950</option>
+                        <option value="1951">1951</option>
+                        <option value="1952">1952</option>
+                        <option value="1953">1953</option>
+                        <option value="1954">1954</option>
+                        <option value="1955">1955</option>
+                        <option value="1956">1956</option>
+                        <option value="1957">1957</option>
+                        <option value="1958">1958</option>
+                        <option value="1959">1959</option>
+                        <option value="1960">1960</option>
+                        <option value="1961">1961</option>
+                        <option value="1962">1962</option>
+                        <option value="1963">1963</option>
+                        <option value="1964">1964</option>
+                        <option value="1965">1965</option>
+                        <option value="1966">1966</option>
+                        <option value="1967">1967</option>
+                        <option value="1968">1968</option>
+                        <option value="1969">1969</option>
+                        <option value="1970">1970</option>
+                        <option value="1971">1971</option>
+                        <option value="1972">1972</option>
+                        <option value="1973">1973</option>
+                        <option value="1974">1974</option>
+                        <option value="1975">1975</option>
+                        <option value="1976">1976</option>
+                        <option value="1977">1977</option>
+                        <option value="1978">1978</option>
+                        <option value="1979">1979</option>
+                        <option value="1980" selected="selected">1980</option>
+                        <option value="1981">1981</option>
+                        <option value="1982">1982</option>
+                        <option value="1983">1983</option>
+                        <option value="1984">1984</option>
+                        <option value="1985">1985</option>
+                        <option value="1986">1986</option>
+                        <option value="1987">1987</option>
+                        <option value="1988">1988</option>
+                        <option value="1989">1989</option>
+                        <option value="1990">1990</option>
+                        <option value="1991">1991</option>
+                        <option value="1992">1992</option>
+                        <option value="1993">1993</option>
+                        <option value="1994">1994</option>
+                        <option value="1995">1995</option>
+                        <option value="1996">1996</option>
+                        <option value="1997">1997</option>
+                        <option value="1998">1998</option>
+                        <option value="1999">1999</option>
+                        <option value="2000">2000</option>
+                        <option value="2001">2001</option>
+                        <option value="2002">2002</option>
+
+                    </select>
+                </form>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+            <div id="location" class="screen">
+                <div class="screen_box">
+                <p class="preheaeder">Select your place</p>
+                <h2>
+                   Your place of birth
+                </h2>
+                <p class="description">
+                      Your place of birth helps to determine your sun sign and compatibility with others.
+                </p>
+                <img class="main_img" src="img/placebirthday.svg" alt="">
+                <div class="simple_form form_location me">
+                    <select id="select--loc" class="select__location">
+                        <option value="" disabled selected>Your place of birth</option>
+                        <option value="City 1">City 1</option>
+                        <option value="City 2">City 2</option>
+                        <option value="City 3">City 3</option>
+                        <option value="City 4">City 4</option>
+                        <option value="City 5">City 5</option>
+                    </select>
+                    <input type="hidden" name="autocomplete" value="" id="autocomplete">
+                    <input type="hidden" name="locality" value="" id="locality">
+                    <input type="hidden" name="administrative" value="" id="administrative">
+                    <input type="hidden" name="country" value="" id="country">
+                    <input type="hidden" name="lat" value="" id="lat">
+                    <input type="hidden" name="lng" value="" id="lng">
+                    <p class="error">Choose the place</p>
+                </div>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+            <div id="timeBirthday" class="screen">
+                <div class="screen_box">
+                <p class="preheaeder">Select an answer</p>
+                <h2>
+                   Your time of birth
+                </h2>
+                <p class="description">
+                      Time of birth is important for determining your ascendant, houses, and moon position for your natal chart
+                </p>
+                <img class="main_img" src="img/timebirthday.svg" alt="">
+                <div class="form__time me simple_form">
+                    <input type="time" placeholder="Time" class="text input" id="time" name="time">
+                    <p class="error">Select your time of birth</p>
+                    <div class="pretty p-svg p-curve">
+                            <input type="checkbox" id="dontknowtime"/>
+                            <div class="state p-primary">
+                                <i class="icon mdi mdi-check"></i>
+                                <label><p class="label" >I don’t know the exact time of my birth</p></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+            <div id="progress" class="content__form-result screen">
+                <div class="screen__img">
+                    <div class="planet_1"><img src="img/planet_1.png" alt="loader_planet"/></div>
+                    <div class="planet_2"><img src="img/planet_2.png" alt="loader_planet"/></div>
+                    <div class="planet_3"><img src="img/planet_3.png" alt="loader_planet"/></div>
+                    <div class="planet_4"><img src="img/planet_4.png" alt="loader_planet"/></div>
+                </div>
+                <div class="content__form-result-info">
+                    <div class="result__item">
+                        <p class="item ">Connecting to database</p>
+                        <p class="item line">Designing your natal chart</p>
+                        <p class="item line">Analyzing your horoscope </p>
+                        <p class="item line">Checking for possible impact on your
+zodiac sign</p>
+                    </div>
+                </div>
+
+                <div class="content__form-result-progress">
+                    <progress value="0" max="100" class="progress-fill flex"></progress>
+                </div>
+            </div>
+
+            <div id="screen_7" class="screen event">
+                <div class="screen_box">
+                  <p class="preheaeder">The upcoming events</p>
+                <h2>
+                   VENUS RETROGRADE ☄️
+                </h2>
+                <p class="description">
+                      Venus is responsible for changes in love. We predict a <b>U-turn in your life in november 2021</b>. Both positive and negative scenarios are possible.<br><br>But no worries. Our report will tell you about changes you should expect and get prepered for, so you can avoid mistakes in your love life.
+                </p>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+            <div id="describe" class="screen">
+                <div class="screen_box">
+                  <p class="preheaeder">Select an answer</p>
+                <h2>
+                    Which best describes you?
+                </h2>
+                <form action="" class="form_goal">
+                  <div class="goal_choice">
+                    <div class="goal_item" id="0" data-describe="adventure">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Always down for an adventure. Hate being bored</p>
+                        </div>
+                    </div>
+                    <div class="goal_item" id="1" data-describe="compassionate">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Always willing to help someone in need. Very compassionate</p>
+                        </div>
+                    </div>
+                    <div class="goal_item" id="2" data-describe="romantic">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Hopeless romantic</p>
+                        </div>
+                    </div>
+                    <div class="goal_item" id="3" data-describe="logical">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Very logical and have my life together. I take pride in my successes.</p>
+                        </div>
+                    </div>
+
+                  </div>
+
+
+                </form>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+            <div id="important" class="screen">
+                <div class="screen_box">
+                  <p class="preheaeder">Select an answer</p>
+                <h2>
+                    Which is most important to you in a relationship?
+                </h2>
+                <form action="" class="form_goal">
+                  <div class="goal_choice">
+                    <div class="goal_item" id="0" data-important="romance">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Romance</p>
+                        </div>
+                              <img class="choice_img" src="img/important_0.png" alt="">
+                    </div>
+                    <div class="goal_item" id="1" data-important="adventure">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Adventure</p>
+                        </div>
+                              <img class="choice_img" src="img/important_1.png" alt="">
+                    </div>
+                    <div class="goal_item" id="2" data-important="sex">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Great sex</p>
+                        </div>
+                              <img class="choice_img" src="img/important_2.png" alt="">
+                    </div>
+                    <div class="goal_item" id="3" data-important="reliability">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Reliability</p>
+                        </div>
+                              <img class="choice_img" src="img/important_3.png" alt="">
+                    </div>
+                  </div>
+                </form>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+            <div id="perfectDate" class="screen">
+                <div class="screen_box">
+                  <p class="preheaeder">Select an answer</p>
+                <h2>
+                   What sounds like the perfect date for you?
+                </h2>
+                <form action="" class="form_goal">
+                  <div class="goal_choice">
+                    <div class="goal_item" id="0" data-date="walk">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">A walk on the beach at sunset</p>
+                        </div>
+                              <img class="choice_img" src="img/date_0.png" alt="">
+                    </div>
+                    <div class="goal_item" id="1" data-date="dinner">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Dinner at a fancy restaurant</p>
+                        </div>
+                              <img class="choice_img" src="img/date_1.png" alt="">
+                    </div>
+                    <div class="goal_item" id="2" data-date="park">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">A trip to the amusement park</p>
+                        </div>
+                              <img class="choice_img" src="img/date_2.png" alt="">
+                    </div>
+                    <div class="goal_item" id="3" data-date="kayaking">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Tubing, kayaking, or canoeing together</p>
+                        </div>
+                              <img class="choice_img" src="img/date_3.png" alt="">
+                    </div>
+                  </div>
+                </form>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+            <div id="trait" class="screen">
+                <div class="screen_box">
+                  <p class="preheaeder">Select an answer</p>
+                <h2>
+                   Which personality trait most attracts you in a person?
+                </h2>
+                <form action="" class="form_goal">
+                  <div class="goal_choice">
+                    <div class="goal_item" id="0" data-trait="ambitious">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Ambitious</p>
+                        </div>
+                              <img class="choice_img" src="img/trait_0.png" alt="">
+                    </div>
+                    <div class="goal_item" id="1" data-trait="arrogant">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Arrogant</p>
+                        </div>
+                              <img class="choice_img" src="img/trait_1.png" alt="">
+                    </div>
+                    <div class="goal_item" id="2" data-trait="daring">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Daring</p>
+                        </div>
+                              <img class="choice_img" src="img/trait_2.png" alt="">
+                    </div>
+                    <div class="goal_item" id="3" data-trait="soft">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Soft</p>
+                        </div>
+                              <img class="choice_img" src="img/trait_3.png" alt="">
+                    </div>
+                  </div>
+                </form>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+            <div id="element" class="screen">
+                <div class="screen_box">
+                  <p class="preheaeder">Select an answer</p>
+                <h2>
+                   Which of these natural elements are you most drawn to?
+                </h2>
+                <form action="" class="form_goal">
+                  <div class="goal_choice">
+                    <div class="goal_item" id="0" data-element="earth">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Earth</p>
+                        </div>
+                              <img class="choice_img" src="img/element_0.png" alt="">
+                    </div>
+                    <div class="goal_item" id="1" data-element="water">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Water</p>
+                        </div>
+                              <img class="choice_img" src="img/element_1.png" alt="">
+                    </div>
+                    <div class="goal_item" id="2" data-element="fire">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Fire</p>
+                        </div>
+                              <img class="choice_img" src="img/element_2.png" alt="">
+                    </div>
+                    <div class="goal_item" id="3" data-element="air">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Air</p>
+                        </div>
+                              <img class="choice_img" src="img/element_3.png" alt="">
+                    </div>
+                  </div>
+                </form>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+            <div id="book" class="screen">
+                <div class="screen_box">
+                  <p class="preheaeder">Select an answer</p>
+                <h2>
+                   If you were a book, what genre would you be?
+                </h2>
+                <form action="" class="form_goal">
+                  <div class="goal_choice">
+                    <div class="goal_item" id="0" data-book="mystery">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Mystery</p>
+                        </div>
+                              <img class="choice_img" src="img/book_0.png" alt="">
+                    </div>
+                    <div class="goal_item" id="1" data-book="romance">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Romance</p>
+                        </div>
+                              <img class="choice_img" src="img/book_1.png" alt="">
+                    </div>
+                    <div class="goal_item" id="2" data-book="adventure">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Adventure</p>
+                        </div>
+                              <img class="choice_img" src="img/book_2.png" alt="">
+                    </div>
+                    <div class="goal_item" id="3" data-book="fantasy">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Fantasy</p>
+                        </div>
+                              <img class="choice_img" src="img/book_3.png" alt="">
+                    </div>
+                  </div>
+                </form>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+            <div id="craziestThing" class="screen">
+                <div class="screen_box">
+                  <p class="preheaeder">Write your answer</p>
+                <h2>
+                   What is the craziest thing you have ever done with your partner?
+                </h2>
+                <form action="" class="form_goal">
+                  <textarea class="textarea" name="craziest-thing"></textarea>
+                  <p class="error">Please, write your answer</p>
+                </form>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+            <div id="screen_15" class="screen">
+                <div class="screen_box">
+                <h2>
+                   Did you know? ☄️
+                </h2>
+                <p class="description">
+                      Approximately 20% of men and 13% of women cheat.<br><br>It doesn’t, however, mean that it will happen in your relationship.<br><br>Our detailed relationship guide is build to <b>reveal the love potential</b> between you and your partner. Our recommendations will help you get the <b>love you desire</b> and find answers to all your relationship questions, from strengths to weaknesses to <b>long-term potential</b>.
+                </p>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+            <div id="sexPartner" class="screen">
+                <div class="screen_box">
+                <p class="preheaeder">Select an answer</p>
+                <h2>
+                   Your partner’s gender and name
+                </h2>
+                <div class="form__name partner simple_form">
+                    <input type="text" placeholder="Partner’s name" class="text input" id="form_partner_name" name="partner-name">
+                    <p class="error">Cannot be blank</p>
+                </div>
+                <div class="screen_sex">
+                    <div class="sex" data-sex="woman" id="0">
+                        <img class="marker not-active" src="img/not-active.svg" alt="">
+                        <img class="marker active" src="img/active.svg" alt="">
+                        <img src="img/sex-female.png" alt="" class="img">
+                        <p>Female</p>
+                    </div>
+                    <div class="sex" data-sex="man" id="1">
+                        <img class="marker not-active" src="img/not-active.svg" alt="">
+                        <img class="marker active" src="img/active.svg" alt="">
+                        <img src="img/sex-male.png" alt="" class="img">
+                        <p>Male</p>
+                    </div>
+
+                </div>
+                <p class="undertext">
+                      Gender and name are important for personalizing your partner’s readings.
+                </p>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+            <div id="birthdayPartner" class="screen">
+                <div class="screen_box">
+                <p class="preheaeder">Select partner's date</p>
+                <h2>
+                   Partner's date of birth
+                </h2>
+                <p class="description">
+                      Date of birth helps to determine your partner’s sun sign, numerology and compatibility with you
+                </p>
+                <img class="main_img" src="img/date-of-birth.png" alt="">
+                <form action="" class="form_date simple_form">
+                    <select name="" class="select__day select__date">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+                    <select name="" class="select__month select__date">
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                    <select name="" class="select__year select__date">
+                        <option value="1900">1900</option>
+                        <option value="1901">1901</option>
+                        <option value="1902">1902</option>
+                        <option value="1903">1903</option>
+                        <option value="1904">1904</option>
+                        <option value="1905">1905</option>
+                        <option value="1906">1906</option>
+                        <option value="1907">1907</option>
+                        <option value="1908">1908</option>
+                        <option value="1909">1909</option>
+                        <option value="1910">1910</option>
+                        <option value="1911">1911</option>
+                        <option value="1912">1912</option>
+                        <option value="1913">1913</option>
+                        <option value="1914">1914</option>
+                        <option value="1915">1915</option>
+                        <option value="1916">1916</option>
+                        <option value="1917">1917</option>
+                        <option value="1918">1918</option>
+                        <option value="1919">1919</option>
+                        <option value="1920">1920</option>
+                        <option value="1921">1921</option>
+                        <option value="1922">1922</option>
+                        <option value="1923">1923</option>
+                        <option value="1924">1924</option>
+                        <option value="1925">1925</option>
+                        <option value="1926">1926</option>
+                        <option value="1927">1927</option>
+                        <option value="1928">1928</option>
+                        <option value="1929">1929</option>
+                        <option value="1930">1930</option>
+                        <option value="1931">1931</option>
+                        <option value="1932">1932</option>
+                        <option value="1933">1933</option>
+                        <option value="1934">1934</option>
+                        <option value="1935">1935</option>
+                        <option value="1936">1936</option>
+                        <option value="1937">1937</option>
+                        <option value="1938">1938</option>
+                        <option value="1939">1939</option>
+                        <option value="1940">1940</option>
+                        <option value="1941">1941</option>
+                        <option value="1942">1942</option>
+                        <option value="1943">1943</option>
+                        <option value="1944">1944</option>
+                        <option value="1945">1945</option>
+                        <option value="1946">1946</option>
+                        <option value="1947">1947</option>
+                        <option value="1948">1948</option>
+                        <option value="1949">1949</option>
+                        <option value="1950">1950</option>
+                        <option value="1951">1951</option>
+                        <option value="1952">1952</option>
+                        <option value="1953">1953</option>
+                        <option value="1954">1954</option>
+                        <option value="1955">1955</option>
+                        <option value="1956">1956</option>
+                        <option value="1957">1957</option>
+                        <option value="1958">1958</option>
+                        <option value="1959">1959</option>
+                        <option value="1960">1960</option>
+                        <option value="1961">1961</option>
+                        <option value="1962">1962</option>
+                        <option value="1963">1963</option>
+                        <option value="1964">1964</option>
+                        <option value="1965">1965</option>
+                        <option value="1966">1966</option>
+                        <option value="1967">1967</option>
+                        <option value="1968">1968</option>
+                        <option value="1969">1969</option>
+                        <option value="1970">1970</option>
+                        <option value="1971">1971</option>
+                        <option value="1972">1972</option>
+                        <option value="1973">1973</option>
+                        <option value="1974">1974</option>
+                        <option value="1975">1975</option>
+                        <option value="1976">1976</option>
+                        <option value="1977">1977</option>
+                        <option value="1978">1978</option>
+                        <option value="1979">1979</option>
+                        <option value="1980" selected="selected">1980</option>
+                        <option value="1981">1981</option>
+                        <option value="1982">1982</option>
+                        <option value="1983">1983</option>
+                        <option value="1984">1984</option>
+                        <option value="1985">1985</option>
+                        <option value="1986">1986</option>
+                        <option value="1987">1987</option>
+                        <option value="1988">1988</option>
+                        <option value="1989">1989</option>
+                        <option value="1990">1990</option>
+                        <option value="1991">1991</option>
+                        <option value="1992">1992</option>
+                        <option value="1993">1993</option>
+                        <option value="1994">1994</option>
+                        <option value="1995">1995</option>
+                        <option value="1996">1996</option>
+                        <option value="1997">1997</option>
+                        <option value="1998">1998</option>
+                        <option value="1999">1999</option>
+                        <option value="2000">2000</option>
+                        <option value="2001">2001</option>
+                        <option value="2002">2002</option>
+
+                    </select>
+                </form>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+            <div id="locationPartner" class="screen">
+                <div class="screen_box">
+                <p class="preheaeder">Select partner's place</p>
+                <h2>
+                   Partner's place of birth
+                </h2>
+                <p class="description">
+                    Place is important for determining your partner’s sun sign and compatibility.
+                </p>
+                <img class="main_img" src="img/placebirthday.svg" alt="">
+                <div class="simple_form form_location partner">
+                    <select id="select--loc_partner" class="select__location">
+                        <option value="" disabled selected>Partner's place of birth</option>
+                        <option value="City 1">City 1</option>
+                        <option value="City 2">City 2</option>
+                        <option value="City 3">City 3</option>
+                        <option value="City 4">City 4</option>
+                        <option value="City 5">City 5</option>
+                    </select>
+                    <input type="hidden" name="PartnerAutocomplete" value="" id="PartnerAutocomplete">
+                    <input type="hidden" name="PartnerLocality" value="" id="PartnerLocality">
+                    <input type="hidden" name="PartnerAdministrative" value="" id="PartnerAdministrative">
+                    <input type="hidden" name="PartnerCountry" value="" id="PartnerCountry">
+                    <input type="hidden" name="PartnerLat" value="" id="PartnerLat">
+                    <input type="hidden" name="PartnerLng" value="" id="PartnerLng">
+                    <p class="error">Choose the place</p>
+                </div>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+            <div id="timeBirthdayPartner" class="screen">
+                <div class="screen_box">
+                <p class="preheaeder">Select an answer</p>
+                <h2>
+                   Partner's time of birth
+                </h2>
+                <p class="description">
+                    Time of birth is important for determining your partner’s ascendant, houses, and moon position for the natal chart.
+                </p>
+                <img class="main_img" src="img/timebirthday.svg" alt="">
+                <div class="form__time partner simple_form">
+                    <input type="time" placeholder="Time" class="text input" id="time_partner" name="time">
+                    <p class="error">Select time of birth</p>
+                    <div class="pretty p-svg p-curve">
+                            <input type="checkbox" id="dontknowparttime"/>
+                            <div class="state p-primary">
+                                <i class="icon mdi mdi-check"></i>
+                                <label><p class="label" >I don’t know the exact time of partner's birth</p></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+            <div id="screen_17" class="screen compatibility">
+                <img src="img/compatibility-top.jpg" class="top_image">
+                <div class="screen_box">
+                <p class="preheaeder">Wow...</p>
+                <p class="description">
+                      Your compatibility with your partner is a mystery.<br><br>We’ve found many positive aspects and it looks like you can definitely have an incredibly happy relationship with this person... but there are also pitfalls that can destroy your relationship and prevent you from starting a new one. You can build a harmonious and inspiring relationship, if you know how to.
+                </p>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+            <div id="personality" class="screen">
+                <div class="screen_box">
+                  <p class="preheaeder">Select an answer</p>
+                <h2>
+                   How would you describe your partner’s personality?
+                </h2>
+                <form action="" class="form_goal">
+                  <div class="goal_choice">
+                    <div class="goal_item" id="0" data-personaluty="funny">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Funny</p>
+                        </div>
+                              <img class="choice_img" src="img/partner_0.png" alt="">
+                    </div>
+                    <div class="goal_item" id="1" data-personality="hard-working">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Hard-working</p>
+                        </div>
+                              <img class="choice_img" src="img/partner_1.png" alt="">
+                    </div>
+                    <div class="goal_item" id="2" data-personality="easygoing">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Easygoing</p>
+                        </div>
+                              <img class="choice_img" src="img/partner_2.png" alt="">
+                    </div>
+                    <div class="goal_item" id="3" data-personality="serious">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Serious</p>
+                        </div>
+                              <img class="choice_img" src="img/partner_3.png" alt="">
+                    </div>
+                  </div>
+                </form>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+            <div id="introvertPartner" class="screen">
+                <div class="screen_box">
+                  <p class="preheaeder">Select an answer</p>
+                <h2>
+                   Is your partner an introvert or an extrovert?
+                </h2>
+                <form action="" class="form_goal">
+                  <div class="goal_choice">
+                    <div class="goal_item" id="0" data-introvert="extrovert">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Extrovert</p>
+                        </div>
+                              <img class="choice_img" src="img/extravert_0.png" alt="">
+                    </div>
+                    <div class="goal_item" id="1" data-introvert="introvert">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Introvert</p>
+                        </div>
+                              <img class="choice_img" src="img/extravert_1.png" alt="">
+                    </div>
+                    <div class="goal_item" id="2" data-introvert="something">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Something</p>
+                        </div>
+                              <img class="choice_img" src="img/extravert_2.png" alt="">
+                    </div>
+                  </div>
+                </form>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+            <div id="criticizePartner" class="screen">
+                <div class="screen_box">
+                  <p class="preheaeder">Select an answer</p>
+                <h2>
+                   Your partner constantly criticize and undermine you
+                </h2>
+                <form action="" class="form_goal">
+                  <div class="goal_choice">
+                    <div class="goal_item" id="0" data-criticize="yes">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Yes, that’s true</p>
+                        </div>
+                              <img class="choice_img" src="img/criticize_0.png" alt="">
+                    </div>
+                    <div class="goal_item" id="1" data-criticize="maybe">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Maybe, I’m not sure</p>
+                        </div>
+                              <img class="choice_img" src="img/criticize_1.png" alt="">
+                    </div>
+                    <div class="goal_item" id="2" data-criticize="no">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Definitely no</p>
+                        </div>
+                              <img class="choice_img" src="img/criticize_2.png" alt="">
+                    </div>
+                  </div>
+                </form>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+            <div id="thoughtfulPartner" class="screen">
+                <div class="screen_box">
+                  <p class="preheaeder">Select an answer</p>
+                <h2>
+                   Would you say your partner is generally thoughtful when it comes to you and your feelings?
+                </h2>
+                <form action="" class="form_goal">
+                  <div class="goal_choice">
+                    <div class="goal_item" id="0" data-thoughtful="sometimes">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Most of the time, yes</p>
+                        </div>
+                              <img class="choice_img" src="img/thoughtful_0.png" alt="">
+                    </div>
+                    <div class="goal_item" id="1" data-thoughtful="not-really">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Not really</p>
+                        </div>
+                              <img class="choice_img" src="img/thoughtful_1.png" alt="">
+                    </div>
+                    <div class="goal_item" id="2" data-thoughtful="yes">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Yes</p>
+                        </div>
+                              <img class="choice_img" src="img/thoughtful_2.png" alt="">
+                    </div>
+                  </div>
+                </form>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+            <div id="sincerePartner" class="screen">
+                <div class="screen_box">
+                  <p class="preheaeder">Select an answer</p>
+                <h2>
+                   My partner is always straightforward and sincere with their intentions
+                </h2>
+                <form action="" class="form_goal">
+                  <div class="goal_choice">
+                    <div class="goal_item" id="0" data-sincere="yes">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Yes, that’s true</p>
+                        </div>
+                              <img class="choice_img" src="img/criticize_0.png" alt="">
+                    </div>
+                    <div class="goal_item" id="1" data-sincere="maybe">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Maybe, I’m not sure</p>
+                        </div>
+                              <img class="choice_img" src="img/criticize_1.png" alt="">
+                    </div>
+                    <div class="goal_item" id="2" data-sincere="no">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Definitely no</p>
+                        </div>
+                              <img class="choice_img" src="img/criticize_2.png" alt="">
+                    </div>
+                  </div>
+                </form>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+            <div id="knowPatner" class="screen">
+                <div class="screen_box">
+                  <p class="preheaeder">Select an answer</p>
+                <h2>
+                   Does your partner really know you sexually?
+                </h2>
+                <form action="" class="form_goal">
+                  <div class="goal_choice">
+                    <div class="goal_item" id="0" data-know="yes">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Yes, that’s true</p>
+                        </div>
+                              <img class="choice_img" src="img/criticize_0.png" alt="">
+                    </div>
+                    <div class="goal_item" id="1" data-know="maybe">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Maybe, I’m not sure</p>
+                        </div>
+                              <img class="choice_img" src="img/criticize_1.png" alt="">
+                    </div>
+                    <div class="goal_item" id="2" data-know="no">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Definitely no</p>
+                        </div>
+                              <img class="choice_img" src="img/criticize_2.png" alt="">
+                    </div>
+                  </div>
+                </form>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+            <div id="stylePartner" class="screen">
+                <div class="screen_box">
+                  <p class="preheaeder">Select an answer</p>
+                <h2>
+                   How would you describe your partner’s sence of style
+                </h2>
+                <form action="" class="form_goal">
+                  <div class="goal_choice">
+                    <div class="goal_item" id="0" data-style="casual">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Casual</p>
+                        </div>
+                              <img class="choice_img" src="img/style_0.png" alt="">
+                    </div>
+                    <div class="goal_item" id="1" data-style="sportly">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Sportly</p>
+                        </div>
+                              <img class="choice_img" src="img/style_1.png" alt="">
+                    </div>
+                    <div class="goal_item" id="2" data-style="stylish">
+                        <div class="choice">
+                              <img class="marker not-active" src="img/not-active.svg" alt="">
+                              <img class="marker active" src="img/active.svg" alt="">
+                              <p class="choice_text">Stylish</p>
+                        </div>
+                              <img class="choice_img" src="img/style_2.png" alt="">
+                    </div>
+                  </div>
+                </form>
+                </div>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+            <div id="progress" class="content__form-result screen">
+                <div class="screen__img">
+                    <div class="planet_1"><img src="img/planet_1.png" alt="loader_planet"/></div>
+                    <div class="planet_2"><img src="img/planet_2.png" alt="loader_planet"/></div>
+                    <div class="planet_3"><img src="img/planet_3.png" alt="loader_planet"/></div>
+                    <div class="planet_4"><img src="img/planet_4.png" alt="loader_planet"/></div>
+                </div>
+                <div class="content__form-result-info">
+                    <div class="result__item">
+                        <p class="item ">Designing your unique astronomical snapshots</p>
+                        <p class="item line">Analyzing your natal chart</p>
+                        <p class="item line">Comparing your astrology readings</p>
+                        <p class="item line">Selecting actionable advice</p>
+                        <p class="item line">Preparing your compatibility report</p>
+                    </div>
+                </div>
+
+                <div class="content__form-result-progress">
+                    <progress value="0" max="100" class="progress-fill flex"></progress>
+                </div>
+            </div>
+            <div id="email" class="screen">
+                <div class="screen_box">
+                  <p class="preheaeder">Select an answer</p>
+                <h2>
+                    Enter your email to find out how compatible you are with your partner
+                </h2>
+                </div>
+                <form action="" class="form_goal">
+                <div class="form__email simple_form">
+                    <input type="email" placeholder="example@email.com" name="email" class="text input" id="form_email">
+                    <p class="error">Input correct email</p>
+                    <div class="pretty p-svg p-curve">
+                        <input type="checkbox" id="privacy"/>
+                        <div class="state p-primary">
+                            <i class="icon mdi mdi-check"></i>
+                            <label><p class="label">I would like to receive my report and personalised offers & updates from Astromix via this email.</p></label>
+                        </div>
+                    </div>
+                    <p class="error-privacy">Accept the user agreement</p>
+                    <div class="security">
+                        <img class="security_icon" src="img/security-icon.svg">
+                        <p class="undertext">We respect your privacy and are committed to protecting your personal data</p>
+                    </div>
+                </div>
+                </form>
+                <div class="button_box">
+                <div class="back">
+                  <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.46155 1L2.00001 8L8.46155 15" stroke="#C1B4D4" stroke-width="2"/>
+                  </svg>
+                  <p>Back</p>
+                </div>
+                <button class="next">CONTINUE</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="js/quest.js"></script>
+
+<input type="hidden" id="ak" value="Egor_ynKqLVLmAW63V9aMXpAStjUe9bMPkETD"/>
+
+</body>
+</html>
