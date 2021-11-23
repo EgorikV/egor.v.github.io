@@ -306,6 +306,14 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   width: 900px;
 }
 
+.img_d {
+   display: block;
+}
+
+.img_m {
+   display: none;
+}
+
 .heading-2-last {
   display: inline-block;
   margin-top: 0px;
@@ -845,7 +853,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #6868ff;
+  color: #282a36;
   font-size: 24px;
 }
 
@@ -1118,12 +1126,73 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 
 @media screen and (max-width: 767px) {
   .heading.big-p {
-    font-size: 60px;
+    font-size: 48px;
   }
 
+
+  .nav-menu {
+   position: fixed;
+   top: auto !important;
+   bottom: 0;
+   height: 400px;
+   padding-top: 24px;
+   transform: translateY(+100%);
+   -webkit-transform: translateY(+100%);
+    animation: slide-in ease 1s forwards;
+    -webkit-animation: slide-in ease 1s forwards;
+  }
+    
+@keyframes slide-in {
+    100% { transform: translateY(0%); }
+}
+
+@-webkit-keyframes slide-in {
+    100% { -webkit-transform: translateY(0%); }
+}
+
+.nav-link {
+   font-size: 16px;
+   font-weight: 600;
+   padding: 15px 20px;
+}
+
+.nav-button {
+   text-align: center;
+}
+
+.login-button {
+   display: none;
+}
+
+.div-block-4 {
+   width: 100%;
+   padding: 15px 20px;
+   box-sizing: border-box;
+   margin-left: 0;
+}
+
+  .img_d {
+   display: none;
+}
+
+.img_m {
+   display: block;
+}
+
+   .section-about-us .img_m {
+      margin-top: 64px;
+   }
   .subtitle {
     max-width: 300px;
     font-size: 18px;
+  }
+
+  .list-item {
+   font-size: 24px;
+  }
+
+  .paragraph-4 {
+   font-size: 14px;
   }
 
   .div-block-2 {
@@ -1136,7 +1205,13 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   }
 
   .div-block-5 {
-   height: 500px;
+   height: auto;
+  }
+
+  .image {
+   position: static;
+   margin-top: 32px;
+   margin-bottom: 64px;
   }
 
   .button {
@@ -1165,6 +1240,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 
   .div-block-7 {
     margin-left: 0px;
+    margin-top: 128px;
   }
 
   .grid-2 {
@@ -1176,11 +1252,11 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   }
 
   .image-3 {
-    margin-top: 0px;
+    margin-top: 100px;
   }
 
   .image-4 {
-    margin-top: 0px;
+    margin-top: 200px;
   }
 
   .button-copy {
@@ -1200,10 +1276,11 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 
   .heading-3 {
     max-width: none;
+    font-size: 30px;
   }
 
   .image-5 {
-    max-width: 300px;
+    max-width: 250px;
   }
 
   .paragraph-7 {
@@ -1232,6 +1309,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 
   .heading-2, .heading-2-last {
     font-size: 30px;
+    padding-right: 0;
   }
 
   .heading-3-00 {
@@ -1244,11 +1322,13 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   }
 
   .grid-7 {
-    grid-column-gap: 40px;
+    grid-column-gap: 20px;
+    margin-top: 64px;
+    margin-bottom: 64px;
   }
 
   .paragraph-46 {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .button-copy {
@@ -1300,6 +1380,27 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
     margin-left: 0px;
     text-align: center;
   }
+
+  .image-8 {
+   width: 40px;
+   margin-bottom: 16px;
+  }
+
+  .div-block-17 {
+   display: block;
+  }
+
+   .section-about-us {
+   padding-top: 128px;
+   padding-bottom: 64px;
+  }
+
+  .section-3, .section-contacts, .section-how-it-works, .section {
+   padding-top: 128px;
+   padding-bottom: 128px;
+ 
+  }
+
 }
 
 @media screen and (max-width: 479px) {
@@ -1312,6 +1413,14 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 
   .icon {
     color: #fff;
+  }
+
+  .heading-3-00, .heading-3-stroke, .heading-3-strblack {
+   font-size: 24px;
+  }
+
+  .grid-5 {
+   margin-top: 80px;
   }
 
   .nav-menu {
@@ -1380,6 +1489,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   #w-node-_55ce8385-09b0-6d88-fd7b-c68faacbbb28-dd54a907 {
     -ms-grid-column-align: center;
     justify-self: center;
+
   }
 }
 
