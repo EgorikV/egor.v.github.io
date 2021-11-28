@@ -236,7 +236,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   background-repeat: no-repeat;
 }
 .screen-1 {
-  background-image: url("../img/1slide.jpg");
+  background-image: url("../img/1slide-0.jpg");
   animation-name: fade;
   animation-duration: 1.5s;
     z-index: 2;
@@ -244,7 +244,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 }
 
 .screen-2 {
-  background-image: url("../img/2slide.jpg");
+  background-image: url("../img/2slide-0.jpg");
   animation-name: fade;
   animation-duration: 1.5s;
     z-index: 2;
@@ -252,7 +252,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 }
 
 .screen-3 {
-  background-image: url("../img/3slide.jpg");
+  background-image: url("../img/3slide-0.jpg");
   animation-name: fade;
   animation-duration: 1.5s;
     z-index: 2;
@@ -267,6 +267,68 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
     to {
         opacity: 1
     }
+}
+
+.screen-1-blink {
+   display: block;
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+  background-position: 50% 50%;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-image: url("../img/1slide.jpg");
+  -webkit-animation: blink 3s linear infinite;
+  animation: blink 3s linear infinite;
+  z-index: 3;
+
+}
+
+.screen-2-blink {
+   display: block;
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+  background-position: 50% 50%;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-image: url("../img/2slide.jpg");
+  -webkit-animation: blink 3s linear infinite;
+  animation: blink 3s linear infinite;
+    z-index: 3;
+
+}
+
+.screen-3-blink {
+   display: block;
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+  background-position: 50% 50%;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-image: url("../img/3slide.jpg");
+  -webkit-animation: blink 3s linear infinite;
+  animation: blink 3s linear infinite;
+    z-index: 3;
+
+}
+
+@-webkit-keyframes blink {
+  0% { opacity: 0; }
+  50% { opacity: 100; }
+  100% { opacity: 0; }
+}
+@keyframes blink {
+  0% { opacity: 0; }
+  50% { opacity: 100; }
+  100% { opacity: 0; }
 }
 
 .div-block-5 {
