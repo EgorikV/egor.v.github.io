@@ -74,6 +74,9 @@ let headings = document.getElementsByClassName("heading");
 
 /* Устанавливаем стартовый индекс слайда по умолчанию: */
 let screenIndex = 1;
+
+let screenCounter = document.querySelector('#counter');
+screenCounter.innerHTML = "1 / 3";
 /* Вызываем функцию, которая реализована ниже: */
 showScreens(screenIndex);
 
@@ -113,4 +116,9 @@ function showScreens(n) {
     }
     /* Делаем элемент блочным: */
     screens[screenIndex - 1].style.display = "block"; 
+
+    screenCounter.innerHTML = screenIndex + " / 3";
+
 }
+
+let timerId = setInterval(() => showScreens(screenIndex += 1), 5000);
