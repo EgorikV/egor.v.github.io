@@ -122,3 +122,28 @@ function showScreens(n) {
 }
 
 let timerId = setInterval(() => showScreens(screenIndex += 1), 5000);
+
+var $window = $(window);
+var $elems = $(".animation")
+var $vert = $(".vertical")
+
+function isScrolledIntoView($elem, $window) {
+    var docViewTop = $window.scrollTop();
+    var docViewBottom = docViewTop + $window.height();
+
+    var elemTop = $elem.offset().top;
+    var elemBottom = elemTop + $elem.height();
+
+    return ((elemTop <= docViewBottom));
+}
+$(document).on("scroll", function () {
+        if (isScrolledIntoView($vert, $window)) {
+            $(".vert").addClass("animated");        
+    }
+});
+
+$(document).on("scroll", function () {
+        if (isScrolledIntoView($elems, $window)) {
+        $elems.addClass("animated")
+    }
+});
