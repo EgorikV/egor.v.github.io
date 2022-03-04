@@ -74,7 +74,7 @@
      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
  .zodiac-master {
-     background: #FCFDFF;
+     background: #FAFBFE;
      background-size: cover;
      font-family: Montserrat, Arial, sans-serif;
      max-height: 100%;
@@ -136,7 +136,6 @@
      border-radius: 15px;
      padding: 40px 20px 20px;
      background: #FAFBFE;
-     box-shadow: 0px 10px 100px rgba(102, 86, 169, 0.12);
      display: -webkit-box;
      display: -webkit-flex;
      display: -ms-flexbox;
@@ -318,6 +317,9 @@
   text-align: center;
   appearance: none;
   padding: 0 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: -webkit-linear-gradient(hsla(0,0%,100%,0), hsla(0,0%,100%,0));
 }
 
 .form__row .input[disabled], .form__row .input[disabled]::placeholder {
