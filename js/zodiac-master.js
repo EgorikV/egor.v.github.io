@@ -1,5 +1,3 @@
-const ak ="Egor_ynKqLVLmAW63V9aMXpAStjUe9bMPkETD";
-
 let widget = document.querySelector('.zodiac-master');
 let screens = widget.querySelectorAll('.screen'); // Блоки анкеты
 let progressBar = widget.querySelector('.progress_bar_box');
@@ -8,8 +6,7 @@ let chooseSex = widget.querySelectorAll('.sex');
 let checkbox = widget.querySelectorAll('.checkbox');
 let zodiacItems = widget.querySelectorAll('.zodiac_item');
 let noTime = widget.querySelector('#no_time');
-let timeBirthday = widget.querySelector('#time');
-let timeBirthdayPartner = widget.querySelector('#time_partner');
+let timeBirthday = widget.querySelector('#form_time');
 let birthDate = widget.querySelector('#form_date');
 let timeType = widget.querySelector('#timeType');
 let locationBirthday = widget.querySelector('#location');
@@ -23,11 +20,11 @@ let screenImgs = widget.querySelectorAll('.screen_img');
 let personalSigns = widget.querySelectorAll('.personal_sign');
 let personalNames = widget.querySelectorAll('.personal_name');
 let btnStatus = false;
-
 const dataObj = {}; // Обьект с данными
 
 let backButton = widget.querySelector('.back');
-backButton.style.opacity = '0';
+let buttonBox = widget.querySelector('.button_box');
+buttonBox.style.display = 'none';
 
 for (let i = 0; i < screens.length; i++) {
     progressBar.innerHTML += '<div class="step"></div>'
@@ -63,7 +60,7 @@ function changerSlides() {
     currentScreen++;
     screens[currentScreen].classList.add('active');
     steps[currentScreen].classList.add('active');
-    backButton.style.opacity = '1';
+    buttonBox.style.display = 'grid';
     }
     if (currentScreen == (screens.length - 1)) {
         widget.querySelector('.next').querySelector('p').innerHTML = widget.querySelector('#last_cta').value;
@@ -83,9 +80,15 @@ function slideBack(){
     currentScreen--;
     screens[currentScreen].classList.add('active');
     steps[currentScreen].classList.add('active');
+    checkBtnStatus(btnStatus = true);
     }
     if (currentScreen == 0) {
-        backButton.style.opacity = '0';
+        buttonBox.style.display = 'none';
+        let thisZodiacItems = screens[currentScreen].querySelectorAll('.zodiac_item');
+        for (let i = 0; i < thisZodiacItems.length; i++) {
+            thisZodiacItems[i].classList.remove('active');
+        };
+        checkBtnStatus(btnStatus = false);
     }
 }
 
@@ -112,16 +115,14 @@ function slideNext() {
     }
 
     if (screens[currentScreen].id == "birthdate") {
-        if (birthDate.value !== '') {
-            let dates = birthDate.value.split('-');
-            dataObj.birthday = dates[2] + '/' + dates[1] + '/' + dates[0];
+        if (birthDate.value) {
+            dataObj.birthday = birthDate.value;
         } else { 
             widget.querySelector('#row_date').classList.add('error');
             errorStatus = false;
         };
 
         dataObj.birthday = widget.querySelector('#form_date').value;
-        
         if (timeBirthday.value || noTime.checked) {
             dataObj.timeBirthday = timeBirthday.value;
             if( timeType !== 'undefined' && timeType !== null) {
@@ -185,11 +186,13 @@ chooseZodiac = function () {
     checkBtnStatus(btnStatus = true);
 
     for (let i = 0; i < screenImgs.length; i++) {
-        screenImgs[i].src = "img/z-" + this.dataset.zodiac + ".png";
+        screenImgs[i].src = "img/zs-" + this.dataset.zodiac + ".png";
     }
     for (let i = 0; i < personalSigns.length; i++) {
         personalSigns[i].innerHTML = this.dataset.zodiac.charAt(0).toUpperCase() + this.dataset.zodiac.slice(1);
     }
+
+    slideNext();
 }
 
 for (let i = 0; i < zodiacItems.length; i++) {
@@ -255,6 +258,14 @@ widget.querySelector('#form_name').addEventListener('change', () => {
 noTime.addEventListener('change', () => {
     checkError(widget.querySelector('#row_time'));
     if (birthDate.value && (timeBirthday.value || noTime.checked)) {checkBtnStatus(btnStatus = true);} else {checkBtnStatus(btnStatus = false);}
+    if (noTime.checked) {
+        timeBirthday.value = null; 
+        timeBirthday.disabled = true;
+        if (timeType) { timeType.disabled = true;}
+    } else {
+        timeBirthday.disabled = false;
+        if (timeType) { timeType.disabled = false;}
+    }
 });
 timeBirthday.addEventListener('change', () => {
     checkError(widget.querySelector('#row_time'));
@@ -293,11 +304,33 @@ function validateEmail(email) {
     return pattern.test(email);
 }
 
-function sendData() {
-    console.log(dataObj);
-}
 
+//time input
 
+$('document').ready(function () {
+      $("#form_time").inputmask("h:s",{ 
+        alias: "datetime",
+        hourformat: "12",
+        "oncomplete": function(){ 
+            checkError(widget.querySelector('#row_time'));
+            if (birthDate.value && (timeBirthday.value || noTime.checked)) {checkBtnStatus(btnStatus = true);} else {checkBtnStatus(btnStatus = false);}
+        },
+        "oncleared": function(){ checkBtnStatus(btnStatus = false); }
+    });
+
+});
+
+$('document').ready(function () {
+    $('.mask-date').inputmask('d.m.y', {
+        alias: "datetime",
+        "oncomplete": function(){ 
+            checkError(widget.querySelector('#row_date'));
+            if (birthDate.value && (timeBirthday.value || noTime.checked)) {checkBtnStatus(btnStatus = true);} else {checkBtnStatus(btnStatus = false);} 
+        },
+        "oncleared": function(){ checkBtnStatus(btnStatus = false); }
+
+    });
+});
 
 //autocomplite
 
@@ -319,7 +352,7 @@ function initAutocomplete(form) {
             dataType: 'json',
             crossDomain: true,
             data: function (params) {
-                var aida = ak;
+                var aida = $('#ak').val();
                 var query = {
                     aida: aida,
                     q: params.term,
@@ -359,4 +392,66 @@ function initAutocomplete(form) {
             }
         });
     });
+}
+
+function sendData() {
+    console.log(dataObj);
+    var dataRequst = {};
+    dataRequst.Name = dataObj.name;
+    dataRequst.Email = dataObj.email;
+    dataRequst.country = dataObj.locationCountry;
+    dataRequst.administrative = dataObj.locationAdministrative;
+    dataRequst.autocomplete = dataObj.locationAutocomplete;
+    dataRequst.locality = dataObj.locationLocality;
+    dataRequst.lat = dataObj.locationLat;
+    dataRequst.lng = dataObj.locationLng;
+
+    dataRequst.Time = dataObj.timeBirthday;
+    dataRequst.TimeType = dataObj.TimeType;
+
+    dataRequst.Sex = 3;
+    if (dataObj.sex == 'man') dataRequst.Sex = 1;
+    if (dataObj.sex == 'woman') dataRequst.Sex = 2;
+
+    var date = new Date(dataObj.birthday);
+
+    dataRequst.Day = date.getDate();
+    dataRequst.Month = date.getMonth() + 1;
+    dataRequst.Year = date.getFullYear();
+    var d = dataRequst.Day;
+    if (d < 10) d = '0' + d;
+    var m = dataRequst.Month;
+    if (m < 10) m = '0' + m;
+    dataRequst.UserBirthday = d + '.' + m + '.' + dataRequst.Year;
+
+    dataRequst.Import = true;
+
+    startDemoRequest(dataRequst);
+}
+
+function startDemoRequest(dataRequst) {
+    $.ajax({
+            url: '/free/user-info/',
+            method: 'post',
+            dataType: "json",
+            data: dataRequst,
+            success: function (data) {
+                if (data.status == 'success') {
+                    finishResult();
+                }
+            },
+        }
+    );
+}
+
+function finishResult() {
+    var Url = '';
+    if (typeof mainProdUrl !== "undefined") {
+        Url = mainProdUrl;
+    }
+    var Link = '/free/report/';
+    if (typeof masterResultUrl !== "undefined") {
+        Link = masterResultUrl;
+    }
+    window.top.location.href = Url + Link;
 }
