@@ -84,20 +84,19 @@
      z-index: 1000;
      height: 60px;
      padding: 15px 0;
-     box-shadow: 0px 5px 25px rgba(170, 176, 236, 0.25);
      text-align: center;
 }
  .header .astromix_logo {
      display: block;
-     width: 120px;
-     height: 30px;
+     width: 90px;
+     height:24px;
      margin: 0 auto;
 }
 
  .content {
      width: 100%;
      margin: 0 auto;
-     padding: 50px 0;
+     padding: 0;
      display: -webkit-box;
      display: -webkit-flex;
      display: -ms-flexbox;
@@ -133,7 +132,7 @@
      z-index: 1;
      max-width: 600px;
      width: 100%;
-     height: 660px;
+     height: 620px;
      border-radius: 15px;
      padding: 40px 20px 20px;
      background: #FAFBFE;
@@ -155,28 +154,16 @@
 }
 
 @media screen and (max-width: 650px) {
-  .content {
-        padding: 30px 0;
-  }
   .content__form {
     max-width: 550px;
+    height: 600px;
   }
 }
 
 @media screen and (max-width: 380px) {
-  .header {
-    box-shadow: none;
-  }
-  .header .astromix_logo {
-    width: 90px;
-    height: 24px;
-}
-  .content {
-    padding-top: 0;
-  }
   .content__form {
      padding: 40px 16px 20px;
-     height: 610px;
+     height: 580px;
   }
 }
 
@@ -325,7 +312,7 @@
   width: 100%;
   height: 50px;
   background: #FFFFFF;
-  color: #8B80BF;
+  color: rgba(1, 0, 76, 0.8);
   border: 1px solid #D6D6FF;
   border-radius: 10px;
   text-align: center;
@@ -333,14 +320,17 @@
   padding: 0 16px;
 }
 
+.form__row .input[disabled], .form__row .input[disabled]::placeholder {
+  color: rgba(1, 0, 76, 0.05);
+}
 .form__row.error .input {
   background: #FFF5F5;
   border-color: #FF6C6C;
 }
 
-input::-webkit-datetime-edit-day-field, input::-webkit-datetime-edit-month-field, input::-webkit-datetime-edit-year-field, input::-webkit-datetime-edit-text {
+/*input::-webkit-datetime-edit-day-field, input::-webkit-datetime-edit-month-field, input::-webkit-datetime-edit-year-field, input::-webkit-datetime-edit-text {
   color:  rgba(1, 0, 76, 0.2);
-}
+}*/
 input::-webkit-datetime-edit-day-field:focus, input::-webkit-datetime-edit-month-field:focus, input::-webkit-datetime-edit-year-field:focus {
   background-color: #F4F4FF;
   color: rgba(1, 0, 76, 0.8);
@@ -494,6 +484,11 @@ input::-webkit-calendar-picker-indicator {
     transition: all .3s;
 }
 
+.form__row.error .checkbox__checkmark {
+  background: #FFF5F5;
+  border-color: #FF6C6C;
+}
+
 .form__row .active .checkbox__checkmark {
   background: #5F3CF7;
 }
@@ -514,6 +509,9 @@ input::-webkit-calendar-picker-indicator {
 }
 
 @media screen and (max-width: 380px) {
+  .personal__info {
+    margin-top: 10px;
+  }
   .zodiac_text {
     font-size: 14px;
   }
@@ -606,7 +604,7 @@ input::-webkit-calendar-picker-indicator {
 
 .select2-container--default .select2-selection--single {
   height: 48px !important;
-  background-color: #ffffff !important;
+  background-color: transparent;
   color: rgba(1, 0, 76, 0.2) !important;
   border-radius: 10px !important;
   border: 0 !important;
@@ -621,10 +619,10 @@ input::-webkit-calendar-picker-indicator {
  }
 
 .select2-container--default .select2-selection--single .select2-selection__rendered {
-  color: rgba(1, 0, 76, 0.2) !important; }
+  color: rgba(1, 0, 76, 0.8); }
 
 .select2-container--default .select2-selection--single .select2-selection__placeholder {
-  color: rgba(1, 0, 76, 0.2) !important; }
+  color: rgba(1, 0, 76, 0.2); }
 
 .select2-container .select2-selection--single .select2-selection__rendered {
   display: -webkit-box !important;
@@ -667,6 +665,15 @@ input::-webkit-calendar-picker-indicator {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
+  .form__row.error .select2-container .select2-selection--single .select2-selection__rendered {
+    color: #FF6C6C;
+}
+
+  .form__row.error .select2-container {
+    background: #FFF5F5;
+    border-color: #FF6C6C;
+}
+
 
 
  .button_box {
@@ -699,10 +706,23 @@ input::-webkit-calendar-picker-indicator {
      stroke: rgba(47, 5, 110, 0.5);
 }
 
+ .form__row .based-on {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+}
+ .based-on .based-on_icon {
+     width: 20px;
+     height: 20px;
+     margin-right: 10px;
+}
+
  .form__row .security {
      display: flex;
      flex-direction: row;
      align-items: center;
+     justify-content: center;
+     margin-top: 20px;
 }
  .security .security_icon {
      width: 20px;
@@ -728,12 +748,18 @@ input::-webkit-calendar-picker-indicator {
   }
 }
 
-.security p {
+.based-on p {
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 110%;
   color: rgba(102, 86, 169, 0.75);
+}
+
+.security p {
+  font-size: 12px;
+  line-height: 100%;
+  color: #8B80BF;
 }
  
  .content__form .screen .simple_form input::-webkit-input-placeholder {
@@ -762,7 +788,6 @@ input::-webkit-calendar-picker-indicator {
      font-family: Montserrat, Arial, sans-serif;
      width: auto;
      margin: 0 auto;
-     margin-top: 4px;
      text-align: left;
 }
 
@@ -811,6 +836,9 @@ input::-webkit-calendar-picker-indicator {
     }
 }
  @media screen and (max-width: 380px) {
+  .based-on p {
+    font-size: 13px;
+  }
   .form__row p.error {
     font-size: 12px;
   }
@@ -840,9 +868,4 @@ input::-webkit-calendar-picker-indicator {
          width: 100%;
          max-width: 100%;
     }
-}
-
- #dontknowtime, #privacy {
-     height: 30px;
-}
- 
+} 

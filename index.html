@@ -144,13 +144,13 @@
                         </p>
                     <div id="row_date" class="form__row">
                         <p class="form__label">Date of birth</p>
-                        <input type="date" placeholder="" class="input" id="form_date" name="date">
+                        <input type="text" placeholder="00.00.0000" class="input mask-date" id="form_date" name="date">
                         <p class="error">Choose birthdate</p>
                     </div>
                     <div id="row_time" class="form__row">
                         <p class="form__label">Time of birth</p>
                         <div class="form__line">
-                            <input type="time" class="time input" name="time" id="time" min="00:00" max="12:59">
+                            <input type="text" class="input mask-time" name="time" id="form_time" placeholder="00:00" value>
                             <select id="timeType" name="TimeType" class="input time_type" style="width: 31%">
                               <option value="am" selected="selected" style="padding: 0;margin: 0;">AM</option>
                               <option value="pm" style="padding: 0;margin: 0;">PM</option>
@@ -232,10 +232,16 @@
                             <p class="error">Please, accept the user agreement</p>
                         </div>
                         <div class="form__row">
-                            <div class="security">
-                                <img class="security_icon" src="img/based-icon.svg">
+                            <div class="based-on">
+                                <img class="based-on_icon" src="img/based-icon.svg">
                                 <p>You’ll get advice based on your personal information</p>
                             </div>
+                        </div>
+                        <div class="form__row">
+                          <div class="security">
+                            <img class="security_icon" src="img/security-icon.svg">
+                            <p>All your personal data is protected</p>
+                          </div>
                         </div>
                     </div>
                 </div>
@@ -257,6 +263,7 @@
                 </svg>
             </button>
             <input type="hidden" id="last_cta" value="Open">
+            <input type="hidden" id="ak" value="Egor_ynKqLVLmAW63V9aMXpAStjUe9bMPkETD">
         </div>
     </div>
 </section>
@@ -264,6 +271,7 @@
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="https://astromixhoroscope.com/js/jquery-inputmask/jquery.inputmask.bundle.js"></script>
 <script src="js/zodiac-master.js"></script>
 
 <input type="hidden" id="ak" value="Egor_ynKqLVLmAW63V9aMXpAStjUe9bMPkETD"/>
