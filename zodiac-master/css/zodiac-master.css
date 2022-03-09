@@ -422,7 +422,7 @@ input::-webkit-calendar-picker-indicator {
   font-size: 14px;
   line-height: 25px;
   color: #E8E8F2;
-  margin: 20px auto;
+  margin: 10px auto 20px;
 }
 
 .personal__info span {
