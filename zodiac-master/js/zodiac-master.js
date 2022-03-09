@@ -305,11 +305,11 @@ for (let i = 0; i < checkbox.length; i++) {
 
 widget.querySelector('#form_name').addEventListener('change', () => {
     checkError(widget.querySelector('#row_name'));
-    if (widget.querySelector('#form_name').value && dataObj.sex) {checkBtnStatus(btnStatus = true);} else {checkBtnStatus(btnStatus = false);}
+    isActiveButton();
 });
 noTime.addEventListener('change', () => {
     checkError(widget.querySelector('#row_time'));
-    if (validateDate() && (timeBirthday.value || noTime.checked)) {checkBtnStatus(btnStatus = true);} else {checkBtnStatus(btnStatus = false);}
+    isActiveButton();
     if (noTime.checked) {
         timeBirthday.value = null; 
         timeBirthday.disabled = true;
@@ -321,15 +321,15 @@ noTime.addEventListener('change', () => {
 });
 timeBirthday.addEventListener('change', () => {
     checkError(widget.querySelector('#row_time'));
-    if (validateDate() && (timeBirthday.value || noTime.checked)) {checkBtnStatus(btnStatus = true);} else {checkBtnStatus(btnStatus = false);}
+    isActiveButton();
 });
 emailInput.addEventListener('change', () => {
     checkError(formEmail);
-    if (emailInput.value && privacy.checked) {checkBtnStatus(btnStatus = true);} else {checkBtnStatus(btnStatus = false);}
+    isActiveButton();
 });
 privacy.addEventListener('change', () => {
     checkError(privacyRow);
-    if (emailInput.value && privacy.checked) {checkBtnStatus(btnStatus = true);} else {checkBtnStatus(btnStatus = false);}
+    isActiveButton();
 });
 locationBirthday.addEventListener('change', () => {
     checkError(widget.querySelector('#row_location'));
@@ -338,7 +338,7 @@ locationBirthday.addEventListener('change', () => {
 for(let i = 0; i < selectDate.length; i++) {
     selectDate[i].addEventListener('change', () => {
     if(validateDate() != false) {checkError(widget.querySelector('#row_date'));};
-    if(validateDate() && (timeBirthday.value || noTime.checked)) {checkBtnStatus(btnStatus = true);} else {checkBtnStatus(btnStatus = false);};
+    isActiveButton();
 });
 }
 
@@ -365,8 +365,9 @@ $('document').ready(function () {
         alias: "datetime",
         hourformat: "12",
         "oncomplete": function(){ 
+            console.log('123')
             checkError(widget.querySelector('#row_time'));
-            if (birthDate.value && (timeBirthday.value || noTime.checked)) {checkBtnStatus(btnStatus = true);} else {checkBtnStatus(btnStatus = false);}
+            isActiveButton();
         },
         "oncleared": function(){ checkBtnStatus(btnStatus = false); }
     });
