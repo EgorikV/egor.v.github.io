@@ -208,7 +208,7 @@ function validateDate() {
     let day = screens[currentScreen].querySelector('.select__day').value;
     let month = screens[currentScreen].querySelector('.select__month').value;
     let year = screens[currentScreen].querySelector('.select__year').value;
-    let birthday = day + '/' + month + '/' + year;
+    let birthday = month + '/' + day + '/' + year;
     if (day != '' && month != '' && year != '') {
         if (isNaN(Date.parse(birthday))) {
             birthday = false;
