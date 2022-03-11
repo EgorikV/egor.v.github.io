@@ -368,3 +368,11 @@ function myLoader() {
     },5);
     setTimeout( function() { changerSlides(); },5000);
 }
+
+
+
+//scrollbar setup
+
+$( document ).ready(function(){
+    $('.scrollbar-inner').scrollbar();
+});
