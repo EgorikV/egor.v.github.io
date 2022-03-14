@@ -111,7 +111,6 @@ function changerSlides() {
 backButton.addEventListener('click', slideBack);
 
 function slideBack(){
-    console.log(currentStory + ' | ' + currentScreen + ' | ' + currentPage );
     if (currentScreen == 0) {
         pages[currentPage].classList.remove('active');
         currentPage--;
@@ -128,6 +127,9 @@ function slideBack(){
             stories[currentStory].classList.remove('active');
             currentStory--;
             stories[currentStory].classList.add('active');
+            if (currentStory != stories.length -1) {
+                widget.querySelector('.button_box').style.display = "flex";
+            }
         }
     }
 }
