@@ -97,7 +97,7 @@ body {
   max-width: 100%;
   background: rgba(1, 0, 30, 0.71);
   backdrop-filter: blur(100px);
-  padding:  50px 0;
+  padding:  15px 16px 50px;
   min-height: 100vh;
 }
 
@@ -133,7 +133,7 @@ body {
 .know-yourself-master-box .container {
   width: 100%;
   max-width: 1200px;
-  padding: 0 20px;
+  padding: 50px 0 0;
   margin: 0 auto;
 }
 
@@ -202,6 +202,7 @@ body {
   box-shadow: 0px 4px 54px rgba(1, 64, 158, 0.55);
   border-radius: 18px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .know-yourself-master-box .first_button:hover {
@@ -267,9 +268,6 @@ body {
 }
 
 @media screen and (max-width : 480px) {
-  .know-yourself-master-box .container {
-    padding: 0 16px;
-  }
   .know-yourself-master-box .logo {
     width: 80px;
     height: 24px;
@@ -293,15 +291,15 @@ body {
     margin-top: 40px;
   }
   .know-yourself-master-box {
-    padding: 30px 0;
+    padding: 15px;
   }
 }
 
 .know-yourself-master-box .logo-form {
   display: block;
-  margin: 0 auto 30px;
-  width: 90px;
-  height: 27px;
+  margin: 0 auto 15px;
+  width: 80px;
+  height: 20px;
 }
 
 .know-yourself-master-box .form-block {
@@ -312,7 +310,7 @@ body {
   box-shadow: 10px 10px 100px rgb(47 5 110 / 24%);
   position: relative;
   margin: 0 auto;
-  height: 705px;
+  height: 680px;
   padding-top: 20px;
 }
 
@@ -401,7 +399,6 @@ body {
 .know-yourself-master-box .form__row {
   width: 100%;
   display: block;
-  margin-bottom: 5px;
 }
 
 .know-yourself-master-box .form .form__label {
@@ -479,6 +476,26 @@ body {
   opacity: 1;
 }
 
+.know-yourself-master-box .form__input {
+  background: #F9F6FD;
+  border: 1px solid #DBD2E7;
+  box-sizing: border-box;
+  border-radius: 22px;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  color: #2F056E;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 20px;
+  width: 100%;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+}
+
 .know-yourself-master-box .form .form__col__day {
   position: relative;
   width: 25%;
@@ -494,24 +511,9 @@ body {
   width: calc(50% - 30px);
 }
 
-.know-yourself-master-box .form .form__input {
-  background: #F9F6FD;
-  border: 1px solid #DBD2E7;
-  box-sizing: border-box;
-  border-radius: 22px;
-  height: 40px;
-  box-sizing: border-box;
-  padding: 0 20px;
-  color: #AE9CC6;
-  font-family: inherit;
-  font-size: 16px;
-  line-height: 20px;
-  width: 100%;
-  text-align: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
+.know-yourself-master-box .form__col__time {
+  position: relative;
+  width: calc(75% - 15px);
 }
 
 .know-yourself-master-box .form .form__input.time {
@@ -531,6 +533,7 @@ body {
 }
 
 .know-yourself-master-box .form select.form__input {
+  color: #2F056E;
   padding-right: 30px;
   text-align: center;
   background-image: url(../img/arrow-select.svg);
@@ -538,9 +541,17 @@ body {
   background-position: right 0.7em top 50%, 0 0;
   background-size: 0.65em auto, 100%;
 }
+
+.know-yourself-master-box .form select.form__input.date {
+  color: #AE9CC6;
+
+}
+.know-yourself-master-box .form select.form__input.date.choosen {
+  color: #2F056E;
+}
 .know-yourself-master-box .form__row .form__input[disabled],
 .know-yourself-master-box .form__row .form__input[disabled]::placeholder {
-  color: rgba(1, 0, 76, 0.05);
+  color: rgba(1, 0, 76, 0.05)!important;
 }
 
 .know-yourself-master-box .form__row.error .form__input {
@@ -569,9 +580,13 @@ body {
   outline: none;
 }
 
-.know-yourself-master-box .form__row .form__input::placeholder {
-  font-size: 16px;
+.know-yourself-master-box .form .form__input::placeholder{
+  color: #AE9CC6;
   line-height: 125%;
+}
+
+.know-yourself-master-box .form select.form__input option {
+  color: #2F056E;
 }
 
 @media screen and (max-width: 650px) {
@@ -581,17 +596,23 @@ body {
   .know-yourself-master-box .form__row .form__col__month {
     width: calc(50% - 20px);
   }
+  .know-yourself-master-box .form__col__time {
+    width: calc(75% - 10px);
+  }
 }
 
 @media screen and (max-width: 380px) {
   .know-yourself-master-box .form .form__line {
       column-gap: 5px;
   }
-  .know-yourself-master-box .form.form__col__day, .form .form__col__year {
+  .know-yourself-master-box .form .form__col__day, .know-yourself-master-box .form .form__col__year {
     width: 30%;
   }
   .know-yourself-master-box .form .form__col__month {
     width: calc(40% - 10px);
+  }
+  .know-yourself-master-box .form__col__time {
+    width: calc(70% - 5px);
   }
 }
 
@@ -712,6 +733,10 @@ body {
   color: #AE9CC6;
 }
 
+.select2-container--default .select2-selection--single .select2-selection__rendered.choosen {
+  color: #2F056E;
+}
+
 .select2-container--default .select2-selection--single .select2-selection__placeholder {
   color: #AE9CC6 !important;
 }
@@ -760,21 +785,21 @@ body {
   padding-left: 40px;
   cursor: pointer;
   font-size: 15px;
-  line-height: 30px;
+  line-height: 120%;
   color: #2F056E;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .know-yourself-master-box .form .checkbox__input {
   position: absolute;
   left: 0;
-  top: -5px;
+  top: 0;
   min-width: 1em;
   width: 100%;
-  height: 40px;
+  height: 35px;
   z-index: 2;
   opacity: 0;
   margin: 0;
@@ -837,6 +862,7 @@ body {
   -webkit-transition: all .3s;
   transition: all .3s;
   margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 .know-yourself-master-box .security {
@@ -874,7 +900,7 @@ body {
     margin-bottom: 0;
   }
   .know-yourself-master-box .form-block .container {
-    padding: 20px;
+    padding: 16px;
   }
   .know-yourself-master-box .form-block .form-block__steps-text {
     font-size: 12px;
@@ -913,7 +939,7 @@ body {
     height: 24px;
   }
   .know-yourself-master-box .form .checkbox {
-    padding-left: 30px;
+    padding-left: 36px;
     font-size: 14px;
   }
   .know-yourself-master-box .form .form_btn {
@@ -935,15 +961,24 @@ body {
 }
 
 .know-yourself-master-box .scrollbar-inner {
-  height: 450px;
+  height: 430px;
 }
 .know-yourself-master-box .story_description {
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
-  line-height: 130%;
+  line-height: 160%;
   color: rgba(47, 5, 110, 0.8);
-  padding-right: 6px;
+  padding-right: 10px;
+}
+
+.know-yourself-master-box .preform_description {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 150%;
+  color: rgba(47, 5, 110, 0.8);
+  padding-top: 50px;
 }
 
 .know-yourself-master-box .story_container {
@@ -979,7 +1014,6 @@ body {
   display: flex;
   align-items: center;
   text-align: center;
-  text-transform: uppercase;
   color: #FFFFFF;
   background: linear-gradient(253.58deg, #FFACF3 -14.34%, #F98989 114.83%);
   border-radius: 15px;
@@ -1045,6 +1079,15 @@ body {
   max-width: 360px;
   margin: 0 auto;
   display: block;
+  padding-top: 50px;
+}
+
+.know-yourself-master-box .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 620px;
 }
 
 @media screen and (max-width: 650px) {
@@ -1075,7 +1118,7 @@ body {
     border-radius: 14px;
   }
   .know-yourself-master-box .scrollbar-inner {
-    height: 480px;
+    height: 470px;
   }
 }
 @media screen and (max-width: 480px) {
@@ -1085,9 +1128,12 @@ body {
   .know-yourself-master-box .story_title, .wonder_title {
     font-size: 18px;
   }
-  .know-yourself-master-box .story_description {
+  .know-yourself-master-box .story_description{
     font-size: 13px;
   }
+  .know-yourself-master-box .preform_description {
+    font-size: 14px;
+}
   .know-yourself-master-box .button_box {
     margin-bottom: 10px;
   }
@@ -1108,7 +1154,7 @@ body {
     margin-top: 40px;
   }
   .know-yourself-master-box .scrollbar-inner {
-    height: 514px;
+    height: 495px;
   }
 }
 
@@ -1298,3 +1344,40 @@ body {
   height: 12px;
   left: calc(50% - 8px);
   top: calc(50% - 10px); }
+
+.know-yourself-master-box .header_box {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    height: 36px;
+  }
+
+.know-yourself-master-box .header_box .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    background-color: #ffffff;
+    cursor: pointer;
+  }
+
+.know-yourself-master-box .header_box .back:hover {
+  background-color: #9121C8;
+}
+
+.know-yourself-master-box .header_box .back:hover svg path {
+  stroke: #ffffff;
+}
+
+.know-yourself-master-box .header_box .logo-form {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }

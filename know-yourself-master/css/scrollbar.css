@@ -125,8 +125,8 @@
     opacity: 0.4;
 }
  
-.scrollbar-inner > .scroll-element .scroll-element_track { background-color: #f9f6fd; }
-.scrollbar-inner > .scroll-element .scroll-bar { background-color: #fda0cd; }
+.scrollbar-inner > .scroll-element .scroll-element_track { background-color: #efeaf6; }
+.scrollbar-inner > .scroll-element .scroll-bar { background-color: #D8C2F0; opacity: 0.6; }
 .scrollbar-inner > .scroll-element:hover .scroll-bar { background-color: #919191; }
 .scrollbar-inner > .scroll-element.scroll-draggable .scroll-bar { background-color: #919191; }
  

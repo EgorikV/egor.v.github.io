@@ -1,8 +1,7 @@
 const demoUrls = [];
 demoUrls.push('url_0'); //url for currentStory = 0
 demoUrls.push('url_1'); //url for currentStory = 1
-demoUrls.push('url_0'); //url for currentStory = 2
-
+demoUrls.push('url_2'); //url for currentStory = 2
 const showcaseUrl = 'showcase_url'; //url for showcase button
 
 
@@ -18,6 +17,7 @@ let storyBtn = widget.querySelector('.next_story');
 let nextButtons = widget.querySelectorAll('.next_btn');
 let showcaseBtn = widget.querySelector('.showcase_btn');
 let demoBtn = widget.querySelector('.demo_btn');
+let backButton = widget.querySelector('.back');
 
 
 //inputs and rows
@@ -26,7 +26,7 @@ let checkbox = widget.querySelector('.checkbox');
 let noTime = widget.querySelector('#no_time');
 let timeBirthday = widget.querySelector('#time');
 let timeType = widget.querySelector('#timeType');
-let selectDate = widget.querySelectorAll('select.form__input');
+let selectDate = widget.querySelectorAll('select.form__input.date');
 let locationBirthday = widget.querySelector('#location');
 let emailInput = widget.querySelector('#email_input');
 let formEmail = widget.querySelector('#row_email');
@@ -102,6 +102,34 @@ function changerSlides() {
 
     //launch emulator of progressbar on "loader" screens
     if (screens[currentScreen].id == "progress") {myLoader();};
+}
+
+
+
+//slide back
+
+backButton.addEventListener('click', slideBack);
+
+function slideBack(){
+    console.log(currentStory + ' | ' + currentScreen + ' | ' + currentPage );
+    if (currentScreen == 0) {
+        pages[currentPage].classList.remove('active');
+        currentPage--;
+        pages[currentPage].classList.add('active');
+    } else {
+        if (screens[currentScreen].querySelectorAll('.story').length == 0 || currentStory == 0) {
+            screens[currentScreen].classList.remove('active');
+            currentScreen--;
+            screens[currentScreen].classList.add('active');
+
+            //launch emulator of progressbar on "loader" screens
+            if (screens[currentScreen].id == "progress") {myLoader();};
+        } else {
+            stories[currentStory].classList.remove('active');
+            currentStory--;
+            stories[currentStory].classList.add('active');
+        }
+    }
 }
 
 
@@ -237,13 +265,20 @@ noTime.addEventListener('change', () => {
             if (timeType) { timeType.disabled = false;}
         }
 });
+timeType.addEventListener('change', () => {
+    checkError(widget.querySelector('#row_time'));
+});
 timeBirthday.addEventListener('change', () => {checkError(widget.querySelector('#row_time'));});
 emailInput.addEventListener('change', () => {checkError(formEmail);});
 for (let i = 0; i < chooseSex.length; i++) {
     chooseSex[i].addEventListener('click',() => {checkError(widget.querySelector('#row_sex'));});
 };
 for(let i = 0; i < selectDate.length; i++) {
-    selectDate[i].addEventListener('change', () => {
+    selectDate[i].addEventListener('change', e => {
+        if(e.target.value || e.target.value != "" ) { 
+            e.target.classList.add('choosen'); 
+        } else { e.target.classList.remove('choosen'); };
+
         if(validateDate() != false) {checkError(widget.querySelector('#row_date'));};
     });
 };
@@ -283,11 +318,6 @@ $( document ).ready(function() {
     initAutocomplete(form);
 });
 
-$( document ).ready(function() {
-    var form = $('#row_location_partner');
-    initAutocomplete(form);
-});
-
 function initAutocomplete(form) {
 
     if (form.find('#autocomplete').val() != '') {
@@ -297,7 +327,7 @@ function initAutocomplete(form) {
     form.find("#location").select2({
         ajax: {
             delay: 750,
-            url: 'https://test.astromix.net/ajax/location/',
+            url: 'https://astromixhoroscope.com/ajax/location',
             dataType: 'json',
             crossDomain: true,
             data: function (params) {
@@ -318,6 +348,7 @@ function initAutocomplete(form) {
     }).on('select2:select', function (e) {
         var data = e.params.data;
         $('#row_location').removeClass('error');
+        $('.select2-selection__rendered').addClass('choosen');
         form.find('#lat').val('');
         form.find('#lng').val('');
         form.find('#locality').val('');
@@ -356,6 +387,7 @@ function sendData() {
 
 function myLoader() {
     let progress = widget.querySelector('.progress-fill');
+    progress.value = 0;
     let progressItems = widget.querySelectorAll('.line');
     let interval = ( 100 / (progressItems.length + 1 ) );
     setInterval( function() {
@@ -366,7 +398,10 @@ function myLoader() {
             };
         };
     },5);
-    setTimeout( function() { changerSlides(); },5000);
+    let loaderTimeout = setTimeout( function() { changerSlides(); },5000);
+    backButton.addEventListener('click', () => {
+        clearTimeout(loaderTimeout);
+    });
 }
 
 
