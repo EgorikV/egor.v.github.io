@@ -852,7 +852,6 @@ body {
   display: block;
   text-align: center;
   color: #fff;
-  text-transform: uppercase;
   font-weight: 700;
   font-size: 16px;
   line-height: 18px;
@@ -1020,7 +1019,6 @@ body {
   background: linear-gradient(253.58deg, #FFACF3 -14.34%, #F98989 114.83%);
   border-radius: 15px;
   cursor: pointer;
-  text-transform: uppercase;
 }
 
 .know-yourself-master-box .next_story:hover {
